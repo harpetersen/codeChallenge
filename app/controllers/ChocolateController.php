@@ -31,7 +31,8 @@ class ChocolateController extends BaseController {
 			$darkchocolate = new DarkChocolate;
 			$darkchocolate->ChocolateType = $chocolateType;
 			$darkchocolate->save();
-			return "You have added " . $chocolateType . ".";
+			$View=View::make('chocolate.create')->with('chocolateType',$chocolateType);
+			return $View;
 		}
 		else {return "Please add chocolate types";}
 	}
@@ -51,7 +52,8 @@ class ChocolateController extends BaseController {
 		$newPref = $newPref + 1;
 		// here we update the preference level on the chocolate type
 		$theType = DarkChocolate::where('ChocolateType', '=', $chocolateType)->update(array('Preference' => $newPref));
-		return "" . $chocolateType . " has been upvoted.";
+		$View=View::make('chocolate.upvotePreference')->with('chocolateType',$chocolateType);
+		return $View;
 	}
 
 	/**

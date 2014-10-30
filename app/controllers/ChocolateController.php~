@@ -30,6 +30,7 @@ class ChocolateController extends BaseController {
 		if (isset($chocolateType)){
 			$darkchocolate = new DarkChocolate;
 			$darkchocolate->ChocolateType = $chocolateType;
+			$darkchocolate->save();
 			return "You have added " . $chocolateType . ".";
 		}
 		else {return "Please add chocolate types";}
