@@ -1,0 +1,7 @@
+<h1> Analyzing Chocolate Preferences</h1>
+
+<?php if(isset($ChocolateType)): ?>
+	<?php echo $ChocolateType; ?> is rated at <?php echo $Preference; ?><br/>
+<?php else: ?>
+	No Chocolate ratings currently available.
+<?php endif; ?>
